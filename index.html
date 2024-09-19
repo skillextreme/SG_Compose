@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Platform</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Quill CSS -->
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <style>
+        .email-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+        .quill-editor {
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="email-container">
+        <h2 class="text-center">Send an Email</h2>
+        <form id="emailForm">
+            <div class="mb-3">
+                <label for="recipientEmail" class="form-label">Recipient Email</label>
+                <input type="email" class="form-control" id="recipientEmail" placeholder="Enter recipient's email" required>
+            </div>
+            <div class="mb-3">
+                <label for="emailSubject" class="form-label">Subject</label>
+                <input type="text" class="form-control" id="emailSubject" placeholder="Enter subject" required>
+            </div>
+            <div class="mb-3">
+                <label for="emailBody" class="form-label">Email Body</label>
+                <div id="emailBody" class="quill-editor"></div>
+            </div>
+            <div class="mb-3">
+                <label for="tags" class="form-label">Select Tags</label>
+                <select class="form-select" id="tags" multiple>
+                    <option value="LIS">LIS</option>
+                    <option value="Department">Department</option>
+                    <option value="Research">Research</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Email</button>
+        </form>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Quill JS -->
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+    <!-- Axios for HTTP requests -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- Custom JS -->
+    <script src="app.js"></script>
+</body>
+</html>
